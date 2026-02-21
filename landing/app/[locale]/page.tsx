@@ -3,12 +3,17 @@ import { notFound } from "next/navigation";
 
 import { getMessages, isLocale, locales, type Locale } from "../../lib/i18n";
 
-export default function LocalePage({ params }: { params: { locale: string } }): JSX.Element {
-  if (!isLocale(params.locale)) {
+export default async function LocalePage({
+  params
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<JSX.Element> {
+  const resolvedParams = await params;
+  if (!isLocale(resolvedParams.locale)) {
     notFound();
   }
 
-  const locale = params.locale as Locale;
+  const locale = resolvedParams.locale as Locale;
   const t = getMessages(locale);
 
   return (

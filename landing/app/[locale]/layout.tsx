@@ -4,15 +4,18 @@ import { notFound } from "next/navigation";
 
 import { getMessages, isLocale, type Locale } from "../../lib/i18n";
 
-export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
-  if (!isLocale(params.locale)) {
+type LocaleParams = Promise<{ locale: string }>;
+
+export async function generateMetadata({ params }: { params: LocaleParams }): Promise<Metadata> {
+  const resolvedParams = await params;
+  if (!isLocale(resolvedParams.locale)) {
     return {
       title: "Skiper",
       description: "Skiper"
     };
   }
 
-  const messages = getMessages(params.locale);
+  const messages = getMessages(resolvedParams.locale);
   const title = `${messages.hero.title} | Skiper`;
   const description = messages.hero.subtitle;
 
@@ -20,7 +23,7 @@ export function generateMetadata({ params }: { params: { locale: string } }): Me
     title,
     description,
     alternates: {
-      canonical: `https://skiper.stefanov.tech/${params.locale}`,
+      canonical: `https://skiper.stefanov.tech/${resolvedParams.locale}`,
       languages: {
         en: "https://skiper.stefanov.tech/en",
         ru: "https://skiper.stefanov.tech/ru",
@@ -32,7 +35,7 @@ export function generateMetadata({ params }: { params: { locale: string } }): Me
     openGraph: {
       title,
       description,
-      url: `https://skiper.stefanov.tech/${params.locale}`,
+      url: `https://skiper.stefanov.tech/${resolvedParams.locale}`,
       siteName: "Skiper",
       type: "website"
     },
@@ -44,10 +47,17 @@ export function generateMetadata({ params }: { params: { locale: string } }): Me
   };
 }
 
-export default function LocaleLayout({ children, params }: { children: ReactNode; params: { locale: string } }): JSX.Element {
-  if (!isLocale(params.locale)) {
+export default async function LocaleLayout({
+  children,
+  params
+}: {
+  children: ReactNode;
+  params: LocaleParams;
+}): Promise<JSX.Element> {
+  const resolvedParams = await params;
+  if (!isLocale(resolvedParams.locale)) {
     notFound();
   }
 
-  return <div data-locale={params.locale as Locale}>{children}</div>;
+  return <div data-locale={resolvedParams.locale as Locale}>{children}</div>;
 }
