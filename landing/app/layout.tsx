@@ -4,13 +4,13 @@ import { Chivo, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
 const headingFont = Chivo({
-  subsets: ["latin", "latin-ext", "cyrillic"],
+  subsets: ["latin", "latin-ext", "vietnamese"],
   weight: ["700", "800", "900"],
   variable: "--font-heading"
 });
 
 const bodyFont = Space_Grotesk({
-  subsets: ["latin", "latin-ext", "cyrillic"],
+  subsets: ["latin", "latin-ext", "vietnamese"],
   weight: ["400", "500", "700"],
   variable: "--font-body"
 });
