@@ -6,6 +6,13 @@ Services:
 - `extension/` — Chrome extension (MV3)
 - `landing/` — Next.js multilingual landing page
 
+## Coolify Deployment Note
+
+Root `Dockerfile` supports both runtime targets via env var:
+
+- `SKIPER_SERVICE=backend` with `PORT=8000`
+- `SKIPER_SERVICE=landing` with `PORT=3000`
+
 ## Domains
 
 - Landing: `https://skiper.stefanov.tech`
