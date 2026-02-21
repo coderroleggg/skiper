@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skiper Settings</title>
+    <style>
+      :root {
+        color-scheme: dark;
+      }
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        background: linear-gradient(140deg, #0a0d12 0%, #151a22 55%, #0e141e 100%);
+        color: #eef4ff;
+        width: 360px;
+        padding: 14px;
+        box-sizing: border-box;
+      }
+      h1 {
+        margin: 0 0 6px;
+        font-size: 18px;
+      }
+      p {
+        margin: 0 0 12px;
+        font-size: 12px;
+        color: #bfd1e8;
+      }
+      label {
+        display: block;
+        font-size: 12px;
+        margin-bottom: 6px;
+        color: #d4e2f3;
+      }
+      textarea,
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        background: rgba(0, 0, 0, 0.35);
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 10px;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+      textarea {
+        min-height: 96px;
+        resize: vertical;
+      }
+      .row {
+        display: flex;
+        gap: 8px;
+      }
+      button {
+        border: 0;
+        border-radius: 10px;
+        padding: 9px 11px;
+        cursor: pointer;
+        font-weight: 700;
+      }
+      .primary {
+        background: #2f8eff;
+        color: #fff;
+      }
+      .secondary {
+        background: #202833;
+        color: #dce9f7;
+      }
+      #status {
+        margin-top: 8px;
+        min-height: 16px;
+        font-size: 12px;
+        color: #93ffd4;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Skiper</h1>
+    <p>Set your relevance prompt. Skiper will use it to score YouTube recommendations.</p>
+
+    <label for="userPrompt">Relevance prompt</label>
+    <textarea id="userPrompt" placeholder="Example: I want practical software architecture content with real benchmarks."></textarea>
+
+    <label for="apiBaseUrl">Backend API URL</label>
+    <input id="apiBaseUrl" type="text" />
+
+    <div class="row">
+      <button id="save" class="primary">Save</button>
+      <button id="openOptions" class="secondary">Advanced</button>
+    </div>
+
+    <div id="status"></div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

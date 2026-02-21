@@ -1,0 +1,1 @@
+Follow @rules/main.md

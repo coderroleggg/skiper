@@ -1,0 +1,54 @@
+{
+  "hero": {
+    "kicker": "Signal over noise for YouTube",
+    "title": "Skiper blocks low-value recommendations before they steal your time.",
+    "subtitle": "Skiper reads the spoken content of recommended videos, scores quality and personal relevance with your own preference prompt, then masks weak recommendations while keeping everything clickable.",
+    "downloadButton": "Download Extension",
+    "apiButton": "Open API Spec"
+  },
+  "highlights": [
+    {
+      "title": "Transcript-first filtering",
+      "body": "Each suggested video is identified by URL/ID, transcript text is fetched, and only then scored with the model configured in your backend."
+    },
+    {
+      "title": "Personal relevance engine",
+      "body": "Your custom prompt is always included in scoring. Relevance is measured against what is actually useful for your goals."
+    },
+    {
+      "title": "Live preference evolution",
+      "body": "Use the Feedback button on the current video: your comment and transcript update your personal prompt, so the feed learns your standards."
+    }
+  ],
+  "install": {
+    "title": "How to install and run Skiper",
+    "subtitle": "Full setup in a few minutes. This build is distributed as a ZIP because it is not yet in the Chrome Web Store.",
+    "steps": [
+      {
+        "title": "Download the extension ZIP",
+        "body": "Click \"Download Extension\" above and save the archive to your machine."
+      },
+      {
+        "title": "Unpack the archive",
+        "body": "Extract the ZIP into any folder, for example `~/Downloads/skiper-extension`."
+      },
+      {
+        "title": "Load it in Chrome",
+        "body": "Open `chrome://extensions`, enable Developer Mode, click Load unpacked, and choose the extracted folder."
+      },
+      {
+        "title": "Set your relevance prompt",
+        "body": "Open Skiper from the toolbar and write what content is useful for you (topics, depth, style, what to avoid)."
+      },
+      {
+        "title": "Use YouTube normally",
+        "body": "Open Home, Subscriptions, or any watch page. Skiper will score recommendations and hide videos with score below 5."
+      },
+      {
+        "title": "Train with feedback",
+        "body": "On any watched video click Feedback near the title, explain what was good/bad, and Skiper updates your prompt automatically."
+      }
+    ],
+    "footer": "Backend endpoint: https://api.skiper.stefanov.tech. Landing: https://skiper.stefanov.tech"
+  }
+}

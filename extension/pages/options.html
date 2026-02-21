@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skiper Preferences</title>
+    <style>
+      :root {
+        color-scheme: dark;
+      }
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        background: radial-gradient(circle at 15% 0%, #193153 0%, #0d1117 56%), #0d1117;
+        color: #f4f8ff;
+      }
+      .wrap {
+        max-width: 880px;
+        margin: 24px auto;
+        padding: 0 16px;
+      }
+      .card {
+        background: rgba(5, 8, 14, 0.8);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 16px;
+        padding: 20px;
+        box-shadow: 0 22px 80px rgba(0, 0, 0, 0.35);
+      }
+      h1 {
+        margin: 0 0 8px;
+      }
+      p {
+        margin: 0 0 16px;
+        color: #c8d7eb;
+      }
+      .label {
+        margin: 0 0 8px;
+        font-size: 13px;
+      }
+      textarea,
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background: rgba(0, 0, 0, 0.28);
+        color: #fff;
+        border-radius: 12px;
+        padding: 12px;
+      }
+      textarea {
+        min-height: 220px;
+        resize: vertical;
+      }
+      .row {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 10px;
+        margin-top: 14px;
+      }
+      button {
+        border: 0;
+        border-radius: 12px;
+        background: #2f8eff;
+        color: #fff;
+        cursor: pointer;
+        padding: 10px 16px;
+        font-weight: 700;
+      }
+      #status {
+        min-height: 18px;
+        color: #90ffd0;
+        align-self: center;
+      }
+      code {
+        background: rgba(255, 255, 255, 0.12);
+        padding: 2px 6px;
+        border-radius: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <section class="card">
+        <h1>Skiper Preferences</h1>
+        <p>
+          Describe what "relevant" means for you. Skiper uses this prompt while evaluating YouTube video transcripts.
+          You can be explicit: topics, style, depth, examples, and what to avoid.
+        </p>
+
+        <p class="label">Relevance prompt</p>
+        <textarea id="userPrompt"></textarea>
+
+        <p class="label" style="margin-top: 12px">Backend API URL</p>
+        <input id="apiBaseUrl" type="text" />
+
+        <div class="row">
+          <div id="status"></div>
+          <button id="save">Save preferences</button>
+        </div>
+
+        <p style="margin-top: 16px; font-size: 12px">
+          Default API: <code>https://api.skiper.stefanov.tech</code>
+        </p>
+      </section>
+    </main>
+
+    <script src="options.js"></script>
+  </body>
+</html>

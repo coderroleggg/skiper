@@ -1,0 +1,54 @@
+{
+  "hero": {
+    "kicker": "Señal sobre ruido en YouTube",
+    "title": "Skiper oculta recomendaciones de bajo valor antes de que te roben tiempo.",
+    "subtitle": "Skiper lee el contenido hablado de los videos recomendados, puntúa calidad y relevancia personal con tu propio prompt, y enmascara las recomendaciones débiles sin romper los clics.",
+    "downloadButton": "Descargar extensión",
+    "apiButton": "Abrir especificación API"
+  },
+  "highlights": [
+    {
+      "title": "Filtrado basado en transcripción",
+      "body": "Cada video sugerido se identifica por URL/ID, se obtiene el texto hablado y recién entonces se evalúa con el modelo configurado en el backend."
+    },
+    {
+      "title": "Relevancia personal",
+      "body": "Tu prompt personalizado siempre entra en la evaluación. La relevancia se mide contra lo que realmente sirve para tus objetivos."
+    },
+    {
+      "title": "Preferencias que evolucionan",
+      "body": "Con el botón Feedback en el video actual, tu comentario y transcripción actualizan automáticamente tu prompt personal."
+    }
+  ],
+  "install": {
+    "title": "Cómo instalar y usar Skiper",
+    "subtitle": "Configuración completa en pocos minutos. Esta versión se distribuye como ZIP porque aún no está en Chrome Web Store.",
+    "steps": [
+      {
+        "title": "Descarga el ZIP de la extensión",
+        "body": "Haz clic en «Descargar extensión» y guarda el archivo en tu equipo."
+      },
+      {
+        "title": "Descomprime el archivo",
+        "body": "Extrae el ZIP en cualquier carpeta, por ejemplo `~/Downloads/skiper-extension`."
+      },
+      {
+        "title": "Cárgala en Chrome",
+        "body": "Abre `chrome://extensions`, activa Developer Mode, pulsa Load unpacked y selecciona la carpeta descomprimida."
+      },
+      {
+        "title": "Define tu prompt de relevancia",
+        "body": "Abre Skiper desde la barra y describe qué contenido te sirve: temas, profundidad, estilo y qué evitar."
+      },
+      {
+        "title": "Usa YouTube normalmente",
+        "body": "Abre Inicio, Suscripciones o una página de reproducción. Skiper puntuará recomendaciones y ocultará videos con nota menor a 5."
+      },
+      {
+        "title": "Entrena con feedback",
+        "body": "En cualquier video visto, pulsa Feedback junto al título, explica qué fue bueno/malo y Skiper actualizará tu prompt."
+      }
+    ],
+    "footer": "Backend: https://api.skiper.stefanov.tech. Landing: https://skiper.stefanov.tech"
+  }
+}

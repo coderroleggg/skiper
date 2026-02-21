@@ -1,0 +1,54 @@
+{
+  "hero": {
+    "kicker": "Sinal acima de ruído no YouTube",
+    "title": "Skiper bloqueia recomendações fracas antes de consumirem seu tempo.",
+    "subtitle": "Skiper lê o conteúdo falado dos vídeos recomendados, pontua qualidade e relevância pessoal com seu prompt, e mascara sugestões fracas mantendo tudo clicável.",
+    "downloadButton": "Baixar extensão",
+    "apiButton": "Abrir especificação da API"
+  },
+  "highlights": [
+    {
+      "title": "Filtro por transcrição",
+      "body": "Cada vídeo sugerido é identificado por URL/ID, a transcrição é extraída e só então avaliada pelo modelo configurado no backend."
+    },
+    {
+      "title": "Motor de relevância pessoal",
+      "body": "Seu prompt personalizado sempre entra na pontuação. A relevância é medida contra o que realmente é útil para seus objetivos."
+    },
+    {
+      "title": "Preferências evolutivas",
+      "body": "Use o botão Feedback no vídeo atual: seu comentário + transcrição atualizam automaticamente seu prompt pessoal."
+    }
+  ],
+  "install": {
+    "title": "Como instalar e usar o Skiper",
+    "subtitle": "Configuração completa em poucos minutos. Esta versão é distribuída em ZIP, pois ainda não está na Chrome Web Store.",
+    "steps": [
+      {
+        "title": "Baixe o ZIP da extensão",
+        "body": "Clique em «Baixar extensão» e salve o arquivo no seu computador."
+      },
+      {
+        "title": "Extraia o arquivo",
+        "body": "Descompacte o ZIP em qualquer pasta, por exemplo `~/Downloads/skiper-extension`."
+      },
+      {
+        "title": "Carregue no Chrome",
+        "body": "Abra `chrome://extensions`, ative Developer Mode, clique em Load unpacked e selecione a pasta extraída."
+      },
+      {
+        "title": "Defina seu prompt de relevância",
+        "body": "Abra o Skiper na barra e descreva o conteúdo útil para você: temas, profundidade, estilo e o que evitar."
+      },
+      {
+        "title": "Use o YouTube normalmente",
+        "body": "Abra Home, Inscrições ou uma página de vídeo. O Skiper pontua recomendações e oculta vídeos com nota abaixo de 5."
+      },
+      {
+        "title": "Treine com feedback",
+        "body": "Em qualquer vídeo assistido, clique em Feedback ao lado do título, explique o que foi bom/ruim e o Skiper atualizará seu prompt."
+      }
+    ],
+    "footer": "Backend: https://api.skiper.stefanov.tech. Landing: https://skiper.stefanov.tech"
+  }
+}
