@@ -7,7 +7,7 @@ export default async function LocalePage({
   params
 }: {
   params: Promise<{ locale: string }>;
-}): Promise<JSX.Element> {
+}) {
   const resolvedParams = await params;
   if (!isLocale(resolvedParams.locale)) {
     notFound();

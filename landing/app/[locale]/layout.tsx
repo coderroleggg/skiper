@@ -53,7 +53,7 @@ export default async function LocaleLayout({
 }: {
   children: ReactNode;
   params: LocaleParams;
-}): Promise<JSX.Element> {
+}) {
   const resolvedParams = await params;
   if (!isLocale(resolvedParams.locale)) {
     notFound();
