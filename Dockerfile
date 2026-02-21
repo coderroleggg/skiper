@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   python3-venv \
   && rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install --no-cache-dir \
+RUN pip3 install --no-cache-dir --break-system-packages \
   beartype==0.21.0 \
   fastapi==0.115.13 \
   openai==2.0.0 \
