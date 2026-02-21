@@ -15,7 +15,7 @@ const bodyFont = Space_Grotesk({
   variable: "--font-body"
 });
 
-export default function RootLayout({ children }: { children: ReactNode }): JSX.Element {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={`${headingFont.variable} ${bodyFont.variable}`}>
       <body style={{ fontFamily: "var(--font-body), sans-serif" }}>{children}</body>
