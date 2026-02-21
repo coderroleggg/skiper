@@ -1,5 +1,7 @@
 FROM node:20-bookworm-slim
 
+ARG SKIPER_SERVICE=landing
+
 WORKDIR /app
 ENV PYTHONUNBUFFERED=1
 
@@ -17,11 +19,10 @@ RUN pip3 install --no-cache-dir --break-system-packages \
   uvicorn[standard]==0.34.0 \
   youtube-transcript-api==1.2.2
 
-COPY landing/package.json /app/landing/package.json
-RUN cd /app/landing && npm install
-
 COPY . /app
-RUN cd /app/landing && npm run build
+RUN if [ "$SKIPER_SERVICE" = "landing" ]; then \
+  cd /app/landing && npm install && npm run build; \
+  fi
 
 COPY docker-entrypoint.sh /usr/local/bin/skiper-entrypoint
 RUN chmod +x /usr/local/bin/skiper-entrypoint
